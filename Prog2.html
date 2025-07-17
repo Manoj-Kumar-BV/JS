@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type = "text/javascript">
+        let date = new Date();
+        let month = date.getMonth();
+        let monthname = "";
+        switch(month){
+            case 0: monthname = "Jan";  break;
+            case 1: monthname = "Feb";  break;
+            case 2: monthname = "Mar";  break;
+            case 3: monthname = "Apr";  break;
+            case 4: monthname = "May";  break;
+            case 5: monthname = "Jun";  break;
+            case 6: monthname = "Jul";  break;
+            case 7: monthname = "Aug";  break;
+            case 8: monthname = "Sept";  break;
+            case 9: monthname = "Oct";  break;
+            case 10: monthname = "Nov";  break;
+            case 11: monthname = "Dec";  break;
+            default: monthname = "Unknown"; break;
+        }
+        document.write("Month Name: "+monthname);
+    </script>
+</body>
+</html>
