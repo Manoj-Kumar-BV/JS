@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Selection Statements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .output {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #007acc;
+        }
+        h2 {
+            color: #007acc;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Selection Statements Tutorial</h1>
+    
+    <h2>1. IF Statement</h2>
+    <div class="output" id="if-output"></div>
+    
+    <h2>2. IF-ELSE Statement</h2>
+    <div class="output" id="if-else-output"></div>
+    
+    <h2>3. IF-ELSE IF-ELSE Statement</h2>
+    <div class="output" id="if-else-if-output"></div>
+    
+    <h2>4. SWITCH Statement</h2>
+    <div class="output" id="switch-output"></div>
+    
+    <h2>5. Ternary Operator (Conditional Operator)</h2>
+    <div class="output" id="ternary-output"></div>
+    
+    <h2>6. Logical Operators in Selection</h2>
+    <div class="output" id="logical-output"></div>
+
+    <script>
+        // ==================================================
+        // 1. IF STATEMENT
+        // ==================================================
+        // The if statement executes a block of code if a condition is true
+        // Syntax: if (condition) { code to execute }
+        
+        function demonstrateIfStatement() {
+            let age = 18;
+            let message = "";
+            
+            // Simple if statement - executes only if condition is true
+            if (age >= 18) {
+                message = "You are an adult!";
+            }
+            
+            // This will execute because age (18) is >= 18
+            return message;
+        }
+        
+        // Display the result
+        document.getElementById('if-output').innerHTML = 
+            "<strong>Example:</strong> Age = 18<br>" + 
+            "<strong>Result:</strong> " + demonstrateIfStatement();
+
+        // ==================================================
+        // 2. IF-ELSE STATEMENT
+        // ==================================================
+        // The if-else statement executes one block if condition is true,
+        // another block if condition is false
+        // Syntax: if (condition) { code1 } else { code2 }
+        
+        function demonstrateIfElseStatement() {
+            let score = 75;
+            let result = "";
+            
+            // If-else statement - executes one of two blocks
+            if (score >= 80) {
+                result = "Grade: A - Excellent!";
+            } else {
+                result = "Grade: B - Good job!";
+            }
+            
+            return result;
+        }
+        
+        // Display the result
+        document.getElementById('if-else-output').innerHTML = 
+            "<strong>Example:</strong> Score = 75<br>" + 
+            "<strong>Result:</strong> " + demonstrateIfElseStatement();
+
+        // ==================================================
+        // 3. IF-ELSE IF-ELSE STATEMENT
+        // ==================================================
+        // Multiple conditions can be tested using else if
+        // Syntax: if (condition1) { code1 } else if (condition2) { code2 } else { code3 }
+        
+        function demonstrateIfElseIfStatement() {
+            let temperature = 25;
+            let weather = "";
+            
+            // Multiple conditions using else if
+            if (temperature > 30) {
+                weather = "It's hot outside! 🌞";
+            } else if (temperature > 20) {
+                weather = "It's warm and pleasant! 🌤️";
+            } else if (temperature > 10) {
+                weather = "It's cool outside! 🌥️";
+            } else {
+                weather = "It's cold! Bundle up! ❄️";
+            }
+            
+            return weather;
+        }
+        
+        // Display the result
+        document.getElementById('if-else-if-output').innerHTML = 
+            "<strong>Example:</strong> Temperature = 25°C<br>" + 
+            "<strong>Result:</strong> " + demonstrateIfElseIfStatement();
+
+        // ==================================================
+        // 4. SWITCH STATEMENT
+        // ==================================================
+        // The switch statement is used when you have multiple possible values
+        // for a single variable and want to execute different code for each value
+        // Syntax: switch (variable) { case value1: code1; break; case value2: code2; break; default: code3; }
+        
+        function demonstrateSwitchStatement() {
+            let day = 3; // Let's say 3 represents Wednesday
+            let dayName = "";
+            
+            // Switch statement - great for multiple discrete values
+            switch (day) {
+                case 1:
+                    dayName = "Monday - Start of the work week! 💼";
+                    break; // Break is important to prevent fall-through
+                case 2:
+                    dayName = "Tuesday - Getting into the groove! 📈";
+                    break;
+                case 3:
+                    dayName = "Wednesday - Hump day! 🐪";
+                    break;
+                case 4:
+                    dayName = "Thursday - Almost there! 🎯";
+                    break;
+                case 5:
+                    dayName = "Friday - TGIF! 🎉";
+                    break;
+                case 6:
+                    dayName = "Saturday - Weekend time! 🏖️";
+                    break;
+                case 7:
+                    dayName = "Sunday - Rest day! 😴";
+                    break;
+                default:
+                    dayName = "Invalid day number!";
+                    break;
+            }
+            
+            return dayName;
+        }
+        
+        // Display the result
+        document.getElementById('switch-output').innerHTML = 
+            "<strong>Example:</strong> Day = 3<br>" + 
+            "<strong>Result:</strong> " + demonstrateSwitchStatement();
+
+        // ==================================================
+        // 5. TERNARY OPERATOR (CONDITIONAL OPERATOR)
+        // ==================================================
+        // The ternary operator is a shorthand way to write simple if-else statements
+        // Syntax: condition ? value_if_true : value_if_false
+        
+        function demonstrateTernaryOperator() {
+            let number = 15;
+            
+            // Ternary operator - concise way to write if-else
+            let result = number % 2 === 0 ? "Even number" : "Odd number";
+            
+            // Multiple ternary operators can be chained (though it can get complex)
+            let category = number > 20 ? "Large" : number > 10 ? "Medium" : "Small";
+            
+            return `${number} is an ${result} and is ${category}`;
+        }
+        
+        // Display the result
+        document.getElementById('ternary-output').innerHTML = 
+            "<strong>Example:</strong> Number = 15<br>" + 
+            "<strong>Result:</strong> " + demonstrateTernaryOperator();
+
+        // ==================================================
+        // 6. LOGICAL OPERATORS IN SELECTION
+        // ==================================================
+        // Logical operators allow you to combine multiple conditions
+        // && (AND) - both conditions must be true
+        // || (OR) - at least one condition must be true
+        // ! (NOT) - reverses the boolean value
+        
+        function demonstrateLogicalOperators() {
+            let age = 25;
+            let hasLicense = true;
+            let hasInsurance = false;
+            
+            let results = [];
+            
+            // AND operator (&&) - both conditions must be true
+            if (age >= 18 && hasLicense) {
+                results.push("✅ Can drive (age >= 18 AND has license)");
+            }
+            
+            // OR operator (||) - at least one condition must be true
+            if (age < 25 || hasInsurance) {
+                results.push("❌ Higher insurance rate (age < 25 OR no insurance)");
+            }
+            
+            // NOT operator (!) - reverses the boolean value
+            if (!hasInsurance) {
+                results.push("⚠️ Warning: No insurance detected!");
+            }
+            
+            // Complex logical expressions
+            if (age >= 18 && hasLicense && hasInsurance) {
+                results.push("🎉 Fully qualified driver!");
+            } else if (age >= 18 && hasLicense && !hasInsurance) {
+                results.push("📋 Need insurance to drive legally!");
+            } else {
+                results.push("🚫 Cannot drive legally!");
+            }
+            
+            return results.join("<br>");
+        }
+        
+        // Display the result
+        document.getElementById('logical-output').innerHTML = 
+            "<strong>Example:</strong> Age = 25, Has License = true, Has Insurance = false<br>" + 
+            "<strong>Results:</strong><br>" + demonstrateLogicalOperators();
+
+        // ==================================================
+        // ADDITIONAL NOTES AND BEST PRACTICES
+        // ==================================================
+        
+        /*
+        IMPORTANT NOTES:
+        
+        1. TRUTHY AND FALSY VALUES:
+           - Falsy: false, 0, "", null, undefined, NaN
+           - Truthy: everything else (including "0", "false", [], {})
+        
+        2. COMPARISON OPERATORS:
+           - == (loose equality) - converts types: "5" == 5 is true
+           - === (strict equality) - no type conversion: "5" === 5 is false
+           - != (loose inequality)
+           - !== (strict inequality)
+           - >, <, >=, <=
+        
+        3. BEST PRACTICES:
+           - Always use === instead of == for comparisons
+           - Use consistent indentation and formatting
+           - Keep conditions simple and readable
+           - Use meaningful variable names
+           - Add comments for complex logic
+           - Consider using switch for multiple discrete values
+           - Use ternary operator for simple conditions only
+        
+        4. COMMON PITFALLS:
+           - Forgetting 'break' in switch statements causes fall-through
+           - Using = instead of == or === in conditions
+           - Not handling all possible cases in if-else chains
+           - Overly complex ternary operators that hurt readability
+        */
+    </script>
+</body>
+</html>
