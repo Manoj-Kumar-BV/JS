@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let num = new Array(1,7,10,9,4,15,20,19,17);
+
+        // Lexical Sort
+        num.sort();
+        document.write(num);
+        /* Output will be 
+        1,10,15,17,19,20,4,7,9*/
+
+        // Numeric Sort
+        num.sort((a,b) => a-b); //actual numeric sorting logic
+        document.write(num);
+    </script>
+</body>
+</html>
