@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+</head>
+<body>
+    <h1>To-Do App</h1>
+        <ol><h3>Add the activities</h3></ol>
+        <ol><h3>List all the activities</h3></ol>
+        <ol><h3>Delete the activity</h3></ol>
+        <ol><h3>Quit</h3></ol>
+    <script type="text/javascript">
+        let todo = [];
+        while(true){
+            let req = prompt("Enter the request: ");
+            if(!req) continue;
+            req = req.trim().toLowerCase();
+            if(req === "quit" || req === "q"){
+                console.log("Quitting app");
+                break;
+            }
+            if(req === "list"){
+                console.log("----------------------------");
+                for(const tasks of todo){
+                    console.log(tasks);
+                }
+                console.log("----------------------------");
+            }else if(req === "add"){
+                console.log("----------------------------");
+                let act = prompt("Enter the activity to add to the list");
+                if(act) todo.push(act);
+                console.log("----------------------------");
+            }else if(req === "delete"){
+                console.log("----------------------------");
+                let act = prompt("Enter the activity to delete from the list");
+                let index = todo.indexOf(act);
+                if(index > -1){
+                    todo.splice(index, 1);
+                    console.log("Activity deleted");
+                }else{
+                    console.log("Activity not found");
+                }
+                console.log("----------------------------");
+            }else{
+                console.log("Unknown command. Please use add, list, delete, or quit.");
+            }
+        }
+    </script>
+</body>
+</html>
